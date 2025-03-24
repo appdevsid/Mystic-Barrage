@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>About</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden; /* Отключаем скроллинг */
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Распределяем содержимое */
+            align-items: center;
+            background-color: black; /* Черный фон */
+            font-family: Arial, sans-serif;
+        }
+
+        .title {
+            color: white;
+            font-size: 2.5em;
+            text-align: center;
+            padding-top: 20px; /* Отступ сверху */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .description {
+            color: white;
+            font-size: 1.1em;
+            text-align: center;
+            padding: 20px;
+            max-width: 90%;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            flex-grow: 1; /* Позволяет описанию занимать центральное пространство */
+            display: flex;
+            align-items: center; /* Вертикальное центрирование текста */
+        }
+
+        .button-container {
+            padding-bottom: 20px; /* Отступ снизу */
+            width: 80%;
+            max-width: 300px;
+        }
+
+        .button {
+            background-color: #F48220;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(244, 130, 32, 0.5);
+            text-align: center;
+            text-decoration: none;
+            display: block;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(244, 130, 32, 0.7);
+        }
+
+        .button:active {
+            transform: scale(0.95);
+        }
+
+        @media (max-width: 600px) {
+            .title {
+                font-size: 2em;
+            }
+            .description {
+                font-size: 0.9em;
+            }
+            .button {
+                font-size: 1em;
+                padding: 12px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="title">About</div>
+    <div class="description">
+        We present you a familiar arcade but with new controls, everything will not be as simple as usual, the character can only move horizontally and does not shoot by itself, but you need to double-click on the button to shoot, try hard versions of classic mechanics, for convenience we have implemented everything for control with one button at the bottom of the screen, you move it along the line along which you can move the button and the character will move with it! Standard shells will destroy the cube with 3 hits, red outfits with two, and blue ones with one, but to buy them you need coins that fall out of destroyed cubes, but hurry, when a new coin appears, the old one may disappear, you must have time to collect them in the periods between the destruction of cubes. At the end of the game, so that you do not feel sad about losing, we added a wheel of fortune where you can try to win additional coins, well or not)
+    </div>
+    <div class="button-container">
+        <a href="menu.html" class="button">Back</a>
+    </div>
+    <script src="cordova.js"></script>
+</body>
+</html>

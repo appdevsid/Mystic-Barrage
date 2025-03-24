@@ -1,0 +1,235 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loader Screen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            touch-action: manipulation;
+        }
+
+        .loader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            position: relative;
+        }
+
+        .dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #F48220;
+            border-radius: 50%;
+            transform-origin: center;
+            animation: spin 2s ease-in-out infinite;
+        }
+
+        .dot:nth-child(1) { transform: rotate(0deg) translateX(22px); animation-delay: 0s; }
+        .dot:nth-child(2) { transform: rotate(45deg) translateX(22px); animation-delay: -0.2s; }
+        .dot:nth-child(3) { transform: rotate(90deg) translateX(22px); animation-delay: -0.4s; }
+        .dot:nth-child(4) { transform: rotate(135deg) translateX(22px); animation-delay: -0.6s; }
+        .dot:nth-child(5) { transform: rotate(180deg) translateX(22px); animation-delay: -0.8s; }
+        .dot:nth-child(6) { transform: rotate(225deg) translateX(22px); animation-delay: -1s; }
+        .dot:nth-child(7) { transform: rotate(270deg) translateX(22px); animation-delay: -1.2s; }
+        .dot:nth-child(8) { transform: rotate(315deg) translateX(22px); animation-delay: -1.4s; }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg) translateX(22px) scale(0.5); opacity: 0.5; }
+            50% { transform: rotate(180deg) translateX(22px) scale(1); opacity: 1; }
+            100% { transform: rotate(360deg) translateX(22px) scale(0.5); opacity: 0.5; }
+        }
+
+        .center-dot {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #F48220;
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 1s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.2); }
+            100% { transform: translate(-50%, -50%) scale(1); }
+        }
+
+        .iframe-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="loader-container">
+        <div class="loader">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="center-dot"></div>
+        </div>
+    </div>
+    <div class="iframe-container">
+        <iframe src="menu.html" allow="fullscreen"></iframe>
+    </div>
+    <script src="cordova.js"></script>
+    <script>
+        document.addEventListener('deviceready', onDeviceReady, false);
+
+        function onDeviceReady() {
+
+           
+            setTimeout(function() {
+                const loader = document.querySelector('.loader-container');
+                const iframeContainer = document.querySelector('.iframe-container');
+                
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                    iframeContainer.style.display = 'block';
+                }, 500);
+                location.replace('menu.html');
+            }, 2000);
+        }
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mystic Barrage</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden; /* Отключаем скроллинг */
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Распределяем содержимое */
+            align-items: center;
+            background-color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        .title {
+            color: white;
+            font-size: 2.5em;
+            text-align: center;
+            padding-top: 20px; /* Отступ сверху */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 80%;
+            max-width: 300px;
+            padding-bottom: 20px; /* Отступ снизу */
+        }
+
+        .button {
+            background-color: #F48220;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(244, 130, 32, 0.5);
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(244, 130, 32, 0.7);
+        }
+
+        .button:active {
+            transform: scale(0.95);
+        }
+
+        /* Адаптация для маленьких экранов */
+        @media (max-width: 600px) {
+            .title {
+                font-size: 2em;
+            }
+            .button {
+                font-size: 1em;
+                padding: 12px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="title">Mystic Barrage</div>
+    <div class="button-container">
+        <a href="main.html" class="button">Play</a>
+        <a href="about.html" class="button">About</a>
+        <a href="#" class="button" onclick="openPolicy()">Privacy Policy</a>
+    </div>
+    <script src="cordova.js"></script>
+    <script>
+        function openPolicy(){
+            cordova.InAppBrowser.open('https://doc-hosting.flycricket.io/mystic-barrage-privacy-policy/03e7c0a5-98f0-455d-bccb-f14f7b001608/privacy', '_blank', 'location=no,hardwareback=yes,fullscreen=no,zoom=no,allowInlineMediaPlayback=yes,mediaPlaybackRequiresUserAction=yes,hidespinner=yes');
+        }
+    </script>
+</body>
+</html>

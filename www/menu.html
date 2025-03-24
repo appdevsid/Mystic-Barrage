@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mystic Barrage</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden; /* Отключаем скроллинг */
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Распределяем содержимое */
+            align-items: center;
+            background-color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        .title {
+            color: white;
+            font-size: 2.5em;
+            text-align: center;
+            padding-top: 20px; /* Отступ сверху */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 80%;
+            max-width: 300px;
+            padding-bottom: 20px; /* Отступ снизу */
+        }
+
+        .button {
+            background-color: #F48220;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(244, 130, 32, 0.5);
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(244, 130, 32, 0.7);
+        }
+
+        .button:active {
+            transform: scale(0.95);
+        }
+
+        /* Адаптация для маленьких экранов */
+        @media (max-width: 600px) {
+            .title {
+                font-size: 2em;
+            }
+            .button {
+                font-size: 1em;
+                padding: 12px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="title">Mystic Barrage</div>
+    <div class="button-container">
+        <a href="main.html" class="button">Play</a>
+        <a href="about.html" class="button">About</a>
+        <a href="#" class="button" onclick="openPolicy()">Privacy Policy</a>
+    </div>
+    <script src="cordova.js"></script>
+    <script>
+        function openPolicy(){
+            cordova.InAppBrowser.open('https://doc-hosting.flycricket.io/mystic-barrage-privacy-policy/03e7c0a5-98f0-455d-bccb-f14f7b001608/privacy', '_blank', 'location=no,hardwareback=yes,fullscreen=no,zoom=no,allowInlineMediaPlayback=yes,mediaPlaybackRequiresUserAction=yes,hidespinner=yes');
+        }
+    </script>
+</body>
+</html>
